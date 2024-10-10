@@ -8,8 +8,9 @@
     Shell.FlyoutBehavior="Disabled">
     <TabBar>
         <ShellContent Title="News" ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent Title="Study" ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent Title="Info" ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent Title="Quiz" Icon="icon_quiz.png" ContentTemplate="{DataTemplate local:Quiz}" />
+        <ShellContent Title="Study" ContentTemplate="{DataTemplate local:StudyPage}" />
+        <ShellContent Title="Info" ContentTemplate="{DataTemplate local:InfoPage}" />
+        <ShellContent Title="Quiz" ContentTemplate="{DataTemplate local:Quiz}" />
     </TabBar>
+
 </Shell>
