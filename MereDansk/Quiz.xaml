@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MereDansk.Quiz"
-             Title="Quiz">
-    <VerticalStackLayout>
-        <Label 
-            Text="Quiz"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="MereDansk.Quiz">
+
+    <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+        <Label x:Name="QuestionLabel"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               Margin="0, 20, 0, 20" />
+
+        <StackLayout x:Name="AnswersStackLayout"
+                     VerticalOptions="EndAndExpand"
+                     Padding="20" />
+
+        <Label x:Name="CompletionLabel"
+               Text="Quiz completed!"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               IsVisible="False"
+               Margin="0, 20, 0, 20" />
+
+        <Label x:Name="ResultLabel"
+               FontSize="18"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               IsVisible="False"
+               Margin="0, 20, 0, 20" />
+
+        <Button x:Name="TryAgainButton"
+                Text="Try Again"
+                Margin="0,5"
+                VerticalOptions="Center"
+                IsVisible="False"
+                Clicked="OnTryAgainClicked" />
+
+        <CollectionView x:Name="ScoreboardCollectionView"
+                        IsVisible="False"
+                        VerticalOptions="EndAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label Text="{Binding Date}" FontSize="18" />
+                        <Label Text="{Binding Time}" FontSize="18" />
+                        <Label Text="{Binding Score}" FontSize="18" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
